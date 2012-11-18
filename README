@@ -1,0 +1,11 @@
+ISIS Helper
+==========
+
+Chrome extension that adds a right-click context menu item to add professor names and ratemyprofessor.com links to isis ufl web registration
+Coded in a day, minimally tested before publically releasing - very likely contains bugs
+
+How to use:
+Install the chrome extension (extension.crx, or the extension directory in unpacked, debug mode). Go to isis registration. Right click and press Add professor names. Teacher names should appear in their own column as well as links to their ratemyprofessor.com profiles if they were found.
+
+How it works:
+The extension detects every section id on the registration form and looks the teacher up using a ufl.edu webservice. It then calls a webservice running on a free amazon web service EC2 instance that has all the ratemyprofessor.com ufl professors stored in the database by last name. Using the levenshtein distance algorithm, it detects which ratemyprofessor teacher name is closest to the one displayed on isis (might not be 100% correct, but seems to work fine). If the ratemyprofessor.com teacher id is found, it adds a link to that teacher's profile in a column next to the seciton listing. Otherwise, it just adds the teacher name without a link.
