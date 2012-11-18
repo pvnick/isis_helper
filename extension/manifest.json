@@ -1,0 +1,25 @@
+{
+    "name": "UFL ISIS Helper",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Adds a column to the course registration page containing teacher names and, if available, a link to their page on ratemyprofessor.com",
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "http://*.ec2-23-22-84-14.compute-1.amazonaws.com/",
+        "https://*.ufl.edu/",
+        "http://*.ufl.edu/"
+    ],
+    "background": {
+        "scripts": [
+            "background_script.js",
+            "jquery.min.js"
+        ]
+    },
+    "content_scripts": [{
+        "matches": [
+            "*://*.isis.ufl.edu/cgi-bin/nirvana"
+        ],
+        "js": ["jquery.min.js","isis_content_script.js"]
+    }]
+}
