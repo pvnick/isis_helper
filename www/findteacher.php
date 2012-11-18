@@ -13,15 +13,6 @@ if (!isset($_REQUEST["lastname"])) {
     die("Required parameter lastname not set");
 }
 
-/*
-
-if (!isset($_REQUEST["uid"])) {
-    die("Required parameter uid not set");
-}
-
-$uniqueRequestID = (int)$_REQUEST["uid"];
-*/
-
 $requestLastName = $_REQUEST["lastname"];
 $requestLastName = mysql_escape_string($requestLastName);
 
@@ -45,9 +36,5 @@ while($row = mysql_fetch_assoc($result))
 mysql_close($con);
 
 echo(json_encode($teachers));
-
-exit;
-
-echo("function teacherLookupFunction_" . $uniqueRequestID . "(){return " . json_encode($teachers) . "}")
 
 ?>
