@@ -18,7 +18,7 @@
     },
     "content_scripts": [{
         "matches": [
-            "*://*.isis.ufl.edu/cgi-bin/nirvana"
+            "*://*.isis.ufl.edu/cgi-bin/nirvana*"
         ],
         "js": ["jquery.min.js","isis_content_script.js"]
     }]

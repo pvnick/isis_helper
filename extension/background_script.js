@@ -140,7 +140,7 @@ function getBestRateMyProfessorTID(lastName, fullTextName, sectionRowIndex) {
 var id = chrome.contextMenus.create({
     "title": "Add professor names", 
     "contexts": ["page"], 
-    "documentUrlPatterns": ["*://*.isis.ufl.edu/cgi-bin/nirvana"],
+    "documentUrlPatterns": ["*://*.isis.ufl.edu/cgi-bin/nirvana*"],
     "onclick": addProfessorNames
 });
 
